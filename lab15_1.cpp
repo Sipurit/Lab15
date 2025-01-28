@@ -5,7 +5,7 @@ int a = 5;
 char b = 'A';
 char &c = b;
 int *x = &a;
-char *y = &b;
+void *y = &b;
 int **z = &x;
 
 int main(){
@@ -13,7 +13,7 @@ int main(){
 	cout << &a << " " << &b << " " << &c << " " << &x << " " << &y << " " << &z << endl;
 	c = 'F';
 	cout << a << " " << b << " " << c << " " << x << " " << y << " " << z << endl;
-	*y = 'W';
+	*((char *)y) = 'W';
 	cout << a << " " << b << " " << c << " " << x << " " << y << " " << z << endl;
 	*x = 6;
 	cout << a << " " << b << " " << c << " " << x << " " << y << " " << z << endl;
